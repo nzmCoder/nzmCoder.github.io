@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+	<title>Installing Visual Studio 6 on Windows 7</title>
+	<meta content="PageBreeze Free HTML Editor (http://www.pagebreeze.com)" name="GENERATOR" />
+	<meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type" />
+</head>
+<body bgcolor="#ffffff">
+<h2 align="center" pbzloc="135">How to convert a Microsoft Visual Studio project from VC6 to VC2015</h2>
+
+<ol>
+	<li>In VS2015, open the *.dsp file of the project to be converted. Accept the suggestion to convert the project to the new VS2015.</li>
+	<li>In&nbsp;the menu: Project\Properties.&nbsp;Change the selection to &ldquo;All Configurations&rdquo;
+	<ol style="list-style-type: lower-alpha">
+		<li pbzloc="125">On the General tab:&nbsp;Character Set: <strong>Not Set</strong></li>
+		<li pbzloc="126">On the C/C++ tab: Enable Function-Level linking: <strong>Yes (/Gy)</strong></li>
+		<li pbzloc="127">On the C/C++ tab:&nbsp;Warning Level: <strong>/W2</strong></li>
+		<li pbzloc="131">On the Linker tab: Image Has Safe Exception Handlers:<strong> No</strong></li>
+		<li pbzloc="133">On the Linker tab: Generate Manifest:<strong pbzloc="132"> No</strong></li>
+	</ol>
+	</li>
+	<li pbzloc="99">In the&nbsp;menu: View\Solution Explorer. Browse to and open stdafx.h, and add these lines near the beginning, after the #include guards:</li>
+</ol>
+
+<p><span pbzloc="108" style="font-family: courier new,courier,monospace">#define _WIN32_WINNT 0x05010000<br />
+#define _CRT_SECURE_NO_WARNINGS<br />
+#define _AFX_NO_MFC_CONTROLS_IN_DIALOGS</span><br />
+&nbsp;</p>
+
+<p><em pbzloc="140">Page last updated&nbsp;October 30, 2016</em><font pbzloc="139" size="1">&nbsp;</font></p>
+</body>
+</html>

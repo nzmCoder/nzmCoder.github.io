@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+	<title>Installing Visual Studio 6 on Windows 7</title>
+	<meta content="PageBreeze Free HTML Editor (http://www.pagebreeze.com)" name="GENERATOR" />
+	<meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type" />
+</head>
+<body bgcolor="#ffffff">
+<h2 align="center" pbzloc="115">Instructions for installing Microsoft Visual Studio C++ 6 on Windows 7</h2>
+
+<p>Yes, this tells how to install the 1998 version of Microsoft&#39;s&nbsp;C++ compiler on the modern Windows 7 OS.&nbsp; I&#39;ll leave unanswered the questions of &quot;why&quot; you might want to do this, because there are two kinds of people in the world:&nbsp; The people who already know why, and the people who will never understand. :-)</p>
+
+<p>The only incompatibility&nbsp;I have seen is the inability to change fonts inside the program.&nbsp; There is a workaround by making the adjustment using RegEdit.&nbsp; Other than that it works just like it&nbsp;did in 1998, except that on a modern PC it starts up in 2 seconds,&nbsp;shuts down in 1 second, and compiles the average small program in about&nbsp;3 seconds flat.&nbsp; (I said I wasn&#39;t going to explain why anyone would still want to use this vesion, but there&#39;s&nbsp;a hint.)</p>
+
+<p>Therefore, here is how to install it:</p>
+
+<ol>
+	<li>You must be logged in as an admin with UAC (User Account Control) turned off. (This only needs to be during installation.)</li>
+	<li>Create a zero length file named msjava.dll in the location: c:\windows (This makes the installer satisfied that the correct legacy version of java is already installed.)</li>
+	<li>Browse into the install CD and&nbsp;run SETUP.exe</li>
+	<li>A warning box regarding Visual Studio 6 being no good for Windows 7 will appear - Check box &quot;Do not show this message again&quot;, and select Run Program. This applies to every such warning that occurs for the rest of this procedure.</li>
+	<li>Enter the license key.&nbsp; Click Next.</li>
+	<li>Go into custom install.&nbsp; UNcheck these items:
+	<ul>
+		<li>Microsoft Visual Foxpro</li>
+		<li>Microsoft Visual Interdev 6</li>
+		<li>Microsoft Visual Basic</li>
+		<li>Leave all other custom options as they were.</li>
+	</ul>
+	</li>
+	<li>On the Register Environment Variables query, leave box UNchecked.</li>
+	<li>When prompted by message box, let the installer restart windows.</li>
+	<li>After the reboot, the installer should pick up and continue by itself.</li>
+	<li>Decline when queried to install Visual Sourcesafe, MSDN, InstallShield or anything else. Decline to register the product and let the install finish.</li>
+	<li>Download and install Service Pack 6 for Visual Studio, available&nbsp;from Microsoft.</li>
+	<li>Run the&nbsp;batch file, <a href="ftp://ftp.frontiernet.net/pub/users/moulton667/FixPermissions.bat">FixPermissions.bat</a> . (This changes the compatibility properties of the executables.)</li>
+	<li>Test the installation by running it, creating a project, and compiling.</li>
+	<li>Log out and log back in as a user (not admin).</li>
+	<li>Test the installation again as a user by running it, creating a project, and compiling.</li>
+</ol>
+
+<p><em pbzloc="22">Page last updated&nbsp;September 24, 2016</em></p>
+
+<p>&nbsp;</p>
+
+<p align="center"><font size="1">This Web Page was Built with PageBreeze </font><a href="http://pagebreeze.com" target="_blank"><font size="1">Free HTML Editor</font></a><font size="1"> </font></p>
+</body>
+</html>
